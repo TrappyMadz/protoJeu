@@ -6,35 +6,67 @@ using UnityEngine.SceneManagement;
 public class MainManager : MonoBehaviour
 {
 
-    [SerializeField] private float timer;
+    [SerializeField] private float baseTimer;
     [SerializeField] private int miniGamesCount;
 
+    private float trueTimer;
+    private bool playing = false;
+    private bool wasLastGameWon;
     private int minigamesMades;
 
-    private MainManager instance;
+    public  MainManager instance;
+
+    public bool GetWasLastGameWon()
+    {
+        return wasLastGameWon;
+    }
+
+    public float GetTrueTimer()
+    {
+        return trueTimer;
+    }
+
+    public void SetPlaying(bool isPlaying)
+    {
+        playing = isPlaying;
+    }
 
     private void Update()
     {
-        // Timer
-        if (timer > 0)
+        if (playing)
         {
-            timer -= Time.deltaTime;
+            // Timer
+            if (trueTimer > 0)
+            {
+                trueTimer -= Time.deltaTime;
+            }
+            else
+            {
+                GameEnd();
+            }
         }
-        else
-        {
-            GameEnd();
-        }
+        
         
     }
 
     void Awake()
     {
-        if (instance == null)
+        if (instance == null ||instance == this.gameObject)
         {
             instance = this;
             minigamesMades = 0;
             DontDestroyOnLoad(this.gameObject);
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void ResetMainManager()
+    {
+        trueTimer = baseTimer;
+        minigamesMades = 0;
     }
 
     public void StartNextMiniGame()
@@ -52,4 +84,21 @@ public class MainManager : MonoBehaviour
         // Dernière scène du projet
         SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
     }
+
+    // Victoire au mini-précédent
+    public void MiniGameWon()
+    {
+        wasLastGameWon = true;
+        SceneManager.LoadScene(1);
+    }
+
+    public void MiniGameLost()
+    {
+        wasLastGameWon = false;
+        SceneManager.LoadScene(1);
+    }
+
+
+    
+
 }
