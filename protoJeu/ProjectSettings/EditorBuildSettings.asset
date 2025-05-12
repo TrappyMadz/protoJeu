@@ -8,4 +8,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MiniGameIntermission.unity
+    guid: e68c784af64693a46bc5cd19123a185d
+  - enabled: 1
+    path: Assets/Scenes/MiniGame 1.unity
+    guid: cad1fbc2dbf301546bde078e1564d312
+  - enabled: 1
+    path: Assets/Scenes/MiniGame 2.unity
+    guid: 112e42b8a338c15429585efb7ce32c9e
+  - enabled: 1
+    path: Assets/Scenes/MiniGame 3.unity
+    guid: 2cd558a247a9ce244b26f669e62087d9
+  - enabled: 1
+    path: Assets/Scenes/MiniGame 4.unity
+    guid: 755e23e629e0926478c78ca69a3867e5
+  - enabled: 1
+    path: Assets/Scenes/MiniGame 5.unity
+    guid: 8dc1805d77e9f8a46bce0109fe2aa243
+  - enabled: 1
+    path: Assets/Scenes/MiniGame 6.unity
+    guid: 06fa7b6204ea74b4e80c9cdf3262c1a4
+  - enabled: 1
+    path: Assets/Scenes/VictoryScreen.unity
+    guid: 4d396350c6718e54b8dc647a35bbb8d5
+  - enabled: 1
+    path: Assets/Scenes/NoTimeLeftScreen.unity
+    guid: 7ec572ff80a43504295f314eb68d2f92
   m_configObjects: {}
