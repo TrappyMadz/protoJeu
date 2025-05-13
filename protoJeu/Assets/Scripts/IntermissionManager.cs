@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class IntermissionManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text timeLeftText;
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject lostPanel;
     [SerializeField] private GameObject firstPanel;
+    [SerializeField] private TMP_Text globalTimer;
     [SerializeField] private float timeToWaitBetweenMiniGames;
 
     private MainManager mainManager;
@@ -18,7 +18,7 @@ public class IntermissionManager : MonoBehaviour
     private void Start()
     {
         mainManager = FindObjectOfType<MainManager>();
-
+        mainManager.instance.SetGlobalTimer(globalTimer);
         victoryPanel.SetActive(false);
         lostPanel.SetActive(false);
         firstPanel.SetActive(false);
@@ -30,7 +30,6 @@ public class IntermissionManager : MonoBehaviour
         }
         else if (mainManager.instance.GetWasLastGameWon())
         {
-            UpdateTimerText(mainManager.instance.GetTrueTimer());
             ShowVictoryPanel();
             StartCoroutine(WaitThenStartNextGame(timeToWaitBetweenMiniGames));
         }
@@ -39,11 +38,6 @@ public class IntermissionManager : MonoBehaviour
             ShowLostPanel();
         }
         
-    }
-
-    public void UpdateTimerText(float timer)
-    {
-        timeLeftText.text = timer.ToString();
     }
 
     public void ShowVictoryPanel()
