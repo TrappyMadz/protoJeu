@@ -36,10 +36,11 @@ public class TimerGame : MonoBehaviour
 
     private IEnumerator MiniGameStart()
     {
-        yield return new WaitForSeconds(0.5f);
-        instructionText.gameObject.SetActive(false);
         objective = Random.Range(minStartValue, maxStartValue);
         objectiveText.text = "00:0" + Mathf.Round(objective).ToString();
+        yield return new WaitForSeconds(0.5f);
+        instructionText.gameObject.SetActive(false);
+        
         timer = 5;
         timerActive = true;
     }
