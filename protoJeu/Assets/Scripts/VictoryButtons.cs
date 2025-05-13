@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class VictoryButtons : MonoBehaviour
 {
-    [SerializeField] private string MainMenu = "MenuGame";
     [SerializeField] private TMP_Text scoreText;
 
     private MainManager mainManager;
