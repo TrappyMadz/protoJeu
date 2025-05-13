@@ -206,7 +206,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 180723943}
         m_TargetAssemblyTypeName: MiniGame6, Assembly-CSharp
-        m_MethodName: Pressed
+        m_MethodName: BadAns
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -286,7 +286,6 @@ MonoBehaviour:
   globalTimer: {fileID: 856180130}
   timeToFinishText: {fileID: 810407767}
   timeToFinish: 2
-  instructionText: {fileID: 1515755117}
 --- !u!4 &180723944
 Transform:
   m_ObjectHideFlags: 0

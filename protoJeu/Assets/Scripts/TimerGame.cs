@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimerGame : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class TimerGame : MonoBehaviour
     [SerializeField] private TMP_Text globalTimer;
     [SerializeField] private float maxStartValue;
     [SerializeField] private float minStartValue;
+    [SerializeField] private Button button;
 
     private float timer;
     private float objective;
@@ -25,6 +27,10 @@ public class TimerGame : MonoBehaviour
     {
         mainManager = FindObjectOfType<MainManager>();
         mainManager.instance.SetGlobalTimer(globalTimer);
+        objectiveText.gameObject.SetActive(false);
+        timerText.text = "00:05";
+        timerText.gameObject.SetActive(false);
+        button.gameObject.SetActive(false);
         StartCoroutine(MiniGameStart());
         
     }
@@ -37,11 +43,16 @@ public class TimerGame : MonoBehaviour
     private IEnumerator MiniGameStart()
     {
         objective = Random.Range(minStartValue, maxStartValue);
+        timer = 6;
         objectiveText.text = "00:0" + Mathf.Round(objective).ToString();
         yield return new WaitForSeconds(0.5f);
-        instructionText.gameObject.SetActive(false);
+        objectiveText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         
-        timer = 5;
+        timerText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        button.gameObject.SetActive(true);
+
         timerActive = true;
     }
 
