@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class TryAgainButtons : MonoBehaviour
 {
-    [SerializeField] private string MainMenu = "MenuGame";
   public void TryAgain()
     {
-        SceneManager.LoadScene(MainMenu);
+        SceneManager.LoadScene(0);
     }
 
-    public void OnApplicationQuit()
+    public void QuitPressed()
     {
-        OnApplicationQuit();
+        Application.Quit();
     }
 }

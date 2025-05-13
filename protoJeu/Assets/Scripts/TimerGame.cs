@@ -28,7 +28,7 @@ public class TimerGame : MonoBehaviour
         mainManager = FindObjectOfType<MainManager>();
         mainManager.instance.SetGlobalTimer(globalTimer);
         objectiveText.gameObject.SetActive(false);
-        timerText.text = "00:05";
+        timerText.text = "00:06";
         timerText.gameObject.SetActive(false);
         button.gameObject.SetActive(false);
         StartCoroutine(MiniGameStart());

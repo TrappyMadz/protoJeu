@@ -47,6 +47,7 @@ public class IntermissionManager : MonoBehaviour
 
     public void ShowLostPanel()
     {
+        mainManager.instance.SetPlaying(false);
         lostPanel.SetActive(true);
     }
     private IEnumerator WaitThenStartFirstGame(float timeToWait)
