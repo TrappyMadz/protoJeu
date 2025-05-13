@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MiniGame6 : MonoBehaviour
 {
-    
+
     private float timer;
     private MainManager mainManager;
     [SerializeField] private TMP_Text globalTimer;
