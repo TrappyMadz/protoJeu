@@ -11,12 +11,11 @@ public class MiniGame6 : MonoBehaviour
     [SerializeField] private TMP_Text globalTimer;
     [SerializeField] TMP_Text timeToFinishText;
     [SerializeField] float timeToFinish;
-    [SerializeField] TMP_Text instructionText;
     void Start()
     {
         mainManager = FindObjectOfType<MainManager>();
         mainManager.instance.SetGlobalTimer(globalTimer);
-        StartCoroutine(StartGame());
+        timer = timeToFinish;
     }
 
     private void Update()
@@ -44,10 +43,4 @@ public class MiniGame6 : MonoBehaviour
         }
     }
 
-    private IEnumerator StartGame()
-    {
-        timer = timeToFinish;
-        yield return new WaitForSeconds(0.5f);
-        instructionText.gameObject.SetActive(false);
-    }
 }
