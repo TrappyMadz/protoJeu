@@ -1112,7 +1112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalTimer: {fileID: 1222974863}
   instructionText: {fileID: 2030238359}
-  targetToGet: 3
+  targetToGet: 4
   targetsPositionRangeX: 800
   targetsPositionRangeY: 400
   timeToFinish: 5
