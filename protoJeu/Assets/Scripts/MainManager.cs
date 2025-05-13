@@ -134,7 +134,16 @@ public class MainManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void Replay()
+    {
+        SceneManager.LoadScene(0);
+    }
 
-    
+    public void ButtonQuit()
+    {
+        Application.Quit();
+    }
+
+
 
 }

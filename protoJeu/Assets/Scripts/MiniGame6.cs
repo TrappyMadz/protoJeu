@@ -31,14 +31,14 @@ public class MiniGame6 : MonoBehaviour
 
     public void Timer()
     {
-        if (timer > 0)
+        if (timer >= 0)
         {
             timer -= Time.deltaTime;
             string seconds = Mathf.Round(timer).ToString();
             string milliseconds = (Mathf.Round((timer - Mathf.Floor(timer)) * 1000).ToString());
             timeToFinishText.text = $"0{seconds}:{milliseconds}";
         }
-        else if (timer <= 0)
+        else if (timer < 0)
         {
             mainManager.MiniGameWon();
         }

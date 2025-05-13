@@ -23,13 +23,5 @@ public class VictoryButtons : MonoBehaviour
 
         scoreText.text = $"Temps restant : {seconds}:{milliseconds}";
     }
-    public void Replay()
-    {
-        SceneManager.LoadScene(MainMenu);
-    }
-
-    public void ButtonQuit()
-    {
-        Application.Quit();
-    }
+ 
 }
