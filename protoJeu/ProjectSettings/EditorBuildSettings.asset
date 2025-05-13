@@ -18,13 +18,13 @@ EditorBuildSettings:
     path: Assets/Scenes/SoundsScene.unity
     guid: 112e42b8a338c15429585efb7ce32c9e
   - enabled: 1
-    path: Assets/Scenes/MiniGame 3.unity
+    path: Assets/Scenes/ShooterScene.unity
     guid: 2cd558a247a9ce244b26f669e62087d9
   - enabled: 1
-    path: Assets/Scenes/MiniGame 4.unity
+    path: Assets/Scenes/TimerScene.unity
     guid: 755e23e629e0926478c78ca69a3867e5
   - enabled: 1
-    path: Assets/Scenes/MiniGame 6.unity
+    path: Assets/Scenes/ButtonScene.unity
     guid: 06fa7b6204ea74b4e80c9cdf3262c1a4
   - enabled: 1
     path: Assets/Scenes/VictoryScreen.unity
