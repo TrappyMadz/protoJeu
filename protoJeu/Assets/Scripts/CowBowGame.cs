@@ -11,8 +11,10 @@ public class CoBowGame : MonoBehaviour
     [SerializeField] private int targetToGet;
     [SerializeField] private float targetsPositionRangeX;
     [SerializeField] private float targetsPositionRangeY;
+    [SerializeField] private float timeToFinish;
+    [SerializeField] TMP_Text timeToFinishText;
 
-
+    private float timePassed;
     private Button[] targets;
     private int targetClicked;
 
@@ -24,6 +26,7 @@ public class CoBowGame : MonoBehaviour
     {
         mainManager = FindObjectOfType<MainManager>();
         mainManager.instance.SetGlobalTimer(globalTimer);
+        timePassed = 0;
         targetClicked = 0;
         targets = FindObjectsOfType<Button>();
         for (int i = 0; i < targets.Length; i++)
@@ -48,6 +51,19 @@ public class CoBowGame : MonoBehaviour
         if (targetClicked >= targetToGet)
         {
             mainManager.instance.MiniGameWon();
+        }
+    }
+
+    private void Update()
+    {
+        timePassed += Time.deltaTime;
+        float timer = timeToFinish - timePassed;
+        string seconds = Mathf.Round(timer).ToString();
+        string milliseconds = (Mathf.Round((timer - Mathf.Floor(timer)) * 1000).ToString());
+        timeToFinishText.text = $"0{seconds}:{milliseconds}";
+        if (timePassed > timeToFinish)
+        {
+            mainManager.instance.MiniGameLost();
         }
     }
 }
