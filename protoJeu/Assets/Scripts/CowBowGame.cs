@@ -41,7 +41,7 @@ public class CoBowGame : MonoBehaviour
 
     public void TargetClicked(GameObject target)
     {
-        Destroy(target.gameObject);
+        Destroy(target);
         targetClicked++;
         if (targetClicked >= targetToGet)
         {
