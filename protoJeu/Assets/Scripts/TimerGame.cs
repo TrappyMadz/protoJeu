@@ -8,6 +8,7 @@ public class TimerGame : MonoBehaviour
     [SerializeField] private TMP_Text instructionText;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text objectiveText;
+    [SerializeField] private TMP_Text globalTimer;
     [SerializeField] private float maxStartValue;
     [SerializeField] private float minStartValue;
 
@@ -22,6 +23,7 @@ public class TimerGame : MonoBehaviour
     void Start()
     {
         mainManager = FindObjectOfType<MainManager>();
+        mainManager.instance.SetGlobalTimer(globalTimer);
         StartCoroutine(MiniGameStart());
         
     }

@@ -6,10 +6,12 @@ using UnityEngine.UI;
 
 public class CoBowGame : MonoBehaviour
 {
+    [SerializeField] private TMP_Text globalTimer;
     [SerializeField] private TMP_Text instructionText;
     [SerializeField] private int targetToGet;
     [SerializeField] private float targetsPositionRangeX;
     [SerializeField] private float targetsPositionRangeY;
+
 
     private Button[] targets;
     private int targetClicked;
@@ -21,7 +23,7 @@ public class CoBowGame : MonoBehaviour
     void Start()
     {
         mainManager = FindObjectOfType<MainManager>();
-
+        mainManager.instance.SetGlobalTimer(globalTimer);
         targetClicked = 0;
         targets = FindObjectsOfType<Button>();
         for (int i = 0; i < targets.Length; i++)

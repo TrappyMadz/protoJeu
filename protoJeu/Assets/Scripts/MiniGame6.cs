@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class MiniGame6 : MonoBehaviour
 {
-    [SerializeField] private TMP_Text instructionText;
-    [SerializeField] private TMP_Text timerText;
-    [SerializeField] private TMP_Text objectiveText;
+    
     private float timer;
-    private bool timerActive;
     private MainManager mainManager;
+    [SerializeField] private TMP_Text globalTimer;
     void Start()
     {
         mainManager = FindObjectOfType<MainManager>();
+        mainManager.instance.SetGlobalTimer(globalTimer);
         MiniGameStart();
     }
 
