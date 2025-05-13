@@ -12,6 +12,7 @@ public class MainManager : MonoBehaviour
     private float trueTimer;
     private bool playing = false;
     private bool wasLastGameWon;
+    private bool firstTime;
     private int minigamesMades;
 
     public  MainManager instance;
@@ -26,9 +27,19 @@ public class MainManager : MonoBehaviour
         return trueTimer;
     }
 
+    public bool GetFirstTime()
+    {
+        return firstTime;
+    }
+
     public void SetPlaying(bool isPlaying)
     {
         playing = isPlaying;
+    }
+
+    public void SetFirstTime(bool isFirstTime)
+    {
+        firstTime = isFirstTime;
     }
 
     private void Update()
@@ -55,6 +66,8 @@ public class MainManager : MonoBehaviour
         {
             instance = this;
             minigamesMades = 0;
+            playing = false;
+            firstTime = true;
             DontDestroyOnLoad(this.gameObject);
         }
         else
@@ -67,13 +80,20 @@ public class MainManager : MonoBehaviour
     {
         trueTimer = baseTimer;
         minigamesMades = 0;
+        firstTime = true;
     }
 
     public void StartNextMiniGame()
     {
+
         // On load la scène suivante. La scène de victoire suit le dernier mini-jeu
         minigamesMades++;
-        if (minigamesMades <= miniGamesCount + 1)
+
+        if (minigamesMades == 1)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else if (minigamesMades <= miniGamesCount + 1)
         {
             SceneManager.LoadScene(minigamesMades + 1);
         }
