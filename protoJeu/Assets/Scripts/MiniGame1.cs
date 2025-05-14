@@ -52,10 +52,11 @@ public class MiniGame1 : MonoBehaviour
 
     private IEnumerator StartGame()
     {
-        instructionText.gameObject.SetActive(false);
+        
         ButtonSwitch();
         yield return new WaitForSeconds(0.5f);
-       
+        instructionText.gameObject.SetActive(false);
+
     }
 
     public void ButtonSwitch()
