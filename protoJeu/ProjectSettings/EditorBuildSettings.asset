@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TimerScene.unity
     guid: 755e23e629e0926478c78ca69a3867e5
   - enabled: 1
+    path: Assets/Scenes/HeadTailsScene.unity
+    guid: f7c0eaa7e42099b4c9c5401d0213b901
+  - enabled: 1
     path: Assets/Scenes/ButtonScene.unity
     guid: 06fa7b6204ea74b4e80c9cdf3262c1a4
   - enabled: 1
