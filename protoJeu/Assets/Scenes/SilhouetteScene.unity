@@ -890,6 +890,14 @@ MonoBehaviour:
   timeToFinish: 5
   timeToFinishText: {fileID: 1985598903}
   instructionText: {fileID: 151017360}
+  pos1: {x: -500, y: 265}
+  pos2: {x: 500, y: 265}
+  pos3: {x: -500, y: -265}
+  pos4: {x: 500, y: -265}
+  buttonTrue: {fileID: 2091682647}
+  buttonFalse1: {fileID: 693090622}
+  buttonFalse2: {fileID: 1833410091}
+  buttonFalse3: {fileID: 1193405283}
 --- !u!4 &1746196542
 Transform:
   m_ObjectHideFlags: 0
