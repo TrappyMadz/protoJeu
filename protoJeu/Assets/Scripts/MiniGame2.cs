@@ -11,6 +11,10 @@ public class MiniGame2 : MonoBehaviour
     [SerializeField] TMP_Text timeToFinishText;
     [SerializeField] private float timeToFinish;
     [SerializeField] private TMP_Text instructionText;
+    [SerializeField] private AudioSource catSound;
+    [SerializeField] private AudioSource findGameSound;
+    [SerializeField] private GameObject catPanel;
+    [SerializeField] private GameObject findGamePanel;
 
     private float timePassed;
     void Start()
@@ -18,7 +22,22 @@ public class MiniGame2 : MonoBehaviour
         mainManager = FindObjectOfType<MainManager>();
         mainManager.instance.SetGlobalTimer(globalTimer);
         timePassed = 0;
-        StartCoroutine(StartGame());
+        catPanel.SetActive(false);
+        findGamePanel.SetActive(false);
+        int rnd = Random.Range(1, 3);
+
+        if (rnd == 1)
+        {
+            catPanel.SetActive(true);
+            catSound.Play();
+        }
+        else
+        {
+            findGamePanel.SetActive(true);
+            findGameSound.Play();
+        }
+
+            StartCoroutine(StartGame());
     }
     public void GoodAns()
     {
