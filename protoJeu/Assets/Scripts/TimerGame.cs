@@ -19,14 +19,10 @@ public class TimerGame : MonoBehaviour
     private bool timerActive;
 
 
-    private MainManager mainManager;
-
-
     // Start is called before the first frame update
     void Start()
     {
-        mainManager = FindObjectOfType<MainManager>();
-        mainManager.instance.SetGlobalTimer(globalTimer);
+        MainManager.instance.SetGlobalTimer(globalTimer);
         objectiveText.gameObject.SetActive(false);
         timerText.text = "00:06";
         timerText.gameObject.SetActive(false);
@@ -65,7 +61,7 @@ public class TimerGame : MonoBehaviour
         }
         else if (timerActive && timer <= 0)
         {
-            mainManager.MiniGameLost();
+            MainManager.instance.MiniGameLost();
         }
     }
 
@@ -75,11 +71,11 @@ public class TimerGame : MonoBehaviour
 
         if (Mathf.Round(timer) == Mathf.Round(objective))
         {
-            mainManager.MiniGameWon();
+            MainManager.instance.MiniGameWon();
         }
         else
         {
-            mainManager.MiniGameLost();
+            MainManager.instance.MiniGameLost();
         }
     }
 }

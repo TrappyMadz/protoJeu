@@ -8,9 +8,13 @@ public class MainManager : MonoBehaviour
 {
 
     [SerializeField] private float baseTimer;
-    [SerializeField] private int miniGamesCount;
+    [SerializeField] private int[] miniGames;
+    [SerializeField] private int intermissionScene;
+    [SerializeField] private int victoryScene;
+    [SerializeField] private int miniGamesToPlayCount;
 
     private TMP_Text globalTimer;
+    private int[] toPlay;
 
     private float trueTimer;
     private bool playing = false;
@@ -19,7 +23,7 @@ public class MainManager : MonoBehaviour
     private int minigamesMades;
     private bool globalTimerActive;
 
-    public  MainManager instance;
+    public static MainManager instance;
 
     public bool GetWasLastGameWon()
     {
@@ -96,6 +100,35 @@ public class MainManager : MonoBehaviour
 
     public void StartNextMiniGame()
     {
+        if (firstTime)
+        {
+            // On mélange la liste de TOUS les minijeux, et on prends les x premiers pour les lancer
+            Shuffle(miniGames);
+            toPlay = new int[miniGamesToPlayCount];
+            for (int i = 0; i < miniGamesToPlayCount; i++)
+            {
+                toPlay[i] = miniGames[i]; 
+            }
+            globalTimerActive = false;
+            SceneManager.LoadScene(intermissionScene);
+        }
+        else
+        {
+            minigamesMades++;
+            if (minigamesMades-1 < toPlay.Length)
+            {
+                globalTimerActive = false;
+                SceneManager.LoadScene(toPlay[minigamesMades - 1]);
+            }
+            else
+            {
+                globalTimerActive = false;
+                SceneManager.LoadScene(victoryScene);
+            }
+        }
+
+
+        /** Ancien fonctionement
 
         // On load la scène suivante. La scène de victoire suit le dernier mini-jeu
         minigamesMades++;
@@ -109,6 +142,16 @@ public class MainManager : MonoBehaviour
         {
             globalTimerActive = false;
             SceneManager.LoadScene(minigamesMades + 1);
+        }
+        **/
+    }
+
+    public void Shuffle(int[] array)
+    {
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            int randIndex = Random.Range(0, i + 1);
+            (array[i], array[randIndex]) = (array[randIndex], array[i]);
         }
     }
 

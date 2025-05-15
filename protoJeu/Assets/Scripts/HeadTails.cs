@@ -17,16 +17,14 @@ public class HeadTails : MonoBehaviour
 
     private int playerChoice = 0;
 
-    private MainManager mainManager;
-
 
     // Start is called before the first frame update
     void Start()
     {
         wall.GetComponent<Rigidbody2D>().gravityScale = 0;
         watchout.SetActive(false);
-        mainManager = FindObjectOfType<MainManager>();
-        mainManager.instance.SetGlobalTimer(globalTimer);
+
+        MainManager.instance.SetGlobalTimer(globalTimer);
         StartCoroutine(MiniGameStart());
     }
 
@@ -64,11 +62,11 @@ public class HeadTails : MonoBehaviour
 
         if (player.transform.position.y < -350)
         {
-            mainManager.instance.MiniGameLost();
+            MainManager.instance.MiniGameLost();
         }
         else
         {
-            mainManager.instance.MiniGameWon();
+            MainManager.instance.MiniGameWon();
         }
     }
 
@@ -78,7 +76,7 @@ public class HeadTails : MonoBehaviour
         watchout.SetActive(true);
     }
 
-    public void playerClicked(int choice)
+    public void PlayerClicked(int choice)
     {
         playerChoice = choice;
         if (choice == 1)

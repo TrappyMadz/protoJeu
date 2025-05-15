@@ -7,7 +7,6 @@ public class MiniGame2 : MonoBehaviour
 {
 
     [SerializeField] TMP_Text globalTimer;
-    private MainManager mainManager;
     [SerializeField] TMP_Text timeToFinishText;
     [SerializeField] private float timeToFinish;
     [SerializeField] private TMP_Text instructionText;
@@ -19,8 +18,7 @@ public class MiniGame2 : MonoBehaviour
     private float timePassed;
     void Start()
     {
-        mainManager = FindObjectOfType<MainManager>();
-        mainManager.instance.SetGlobalTimer(globalTimer);
+        MainManager.instance.SetGlobalTimer(globalTimer);
         timePassed = 0;
         catPanel.SetActive(false);
         findGamePanel.SetActive(false);
@@ -41,12 +39,12 @@ public class MiniGame2 : MonoBehaviour
     }
     public void GoodAns()
     {
-        mainManager.instance.MiniGameWon();
+        MainManager.instance.MiniGameWon();
     }
 
     public void BadAns()
     {
-        mainManager.instance.MiniGameLost();
+        MainManager.instance.MiniGameLost();
     }
 
     private void Update()
@@ -58,7 +56,7 @@ public class MiniGame2 : MonoBehaviour
         timeToFinishText.text = $"0{seconds}:{milliseconds}";
         if (timePassed > timeToFinish)
         {
-            mainManager.instance.MiniGameLost();
+            MainManager.instance.MiniGameLost();
         }
     }
 

@@ -16,25 +16,23 @@ public class MiniGame1 : MonoBehaviour
     [SerializeField] private Vector2 pos4;
 
 
-    private List<Button> buttonList = new List<Button>();
-    private List<RectTransform> buttonRctTrsfm = new List<RectTransform>();
     private float timePassed;
     private MainManager mainManager;
    void Start()
     {
         mainManager = FindObjectOfType<MainManager>();
-        mainManager.instance.SetGlobalTimer(globalTimer);
+        MainManager.instance.SetGlobalTimer(globalTimer);
         timePassed = 0;
         StartCoroutine(StartGame());
     }
    public void GoodAns()
     {
-        mainManager.instance.MiniGameWon();
+        MainManager.instance.MiniGameWon();
     }
 
     public void BadAns()
     {
-        mainManager.instance.MiniGameLost();
+        MainManager.instance.MiniGameLost();
     }
 
     private void Update()
@@ -46,7 +44,7 @@ public class MiniGame1 : MonoBehaviour
         timeToFinishText.text = $"0{seconds}:{milliseconds}";
         if (timePassed > timeToFinish)
         {
-            mainManager.instance.MiniGameLost();
+            MainManager.instance.MiniGameLost();
         }
     }
 
