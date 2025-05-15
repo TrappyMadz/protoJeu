@@ -45,7 +45,18 @@ public class HeadTails : MonoBehaviour
         {
             TeleportAnim(right.GetComponent<RectTransform>().anchoredPosition, watchout);
         }
-        yield return new WaitForSeconds(0.5f);
+        
+        watchout.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        watchout.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        watchout.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        watchout.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        watchout.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        watchout.SetActive(true);
 
         GameEnd(rnd);
 
