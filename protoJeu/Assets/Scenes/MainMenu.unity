@@ -1285,7 +1285,7 @@ MonoBehaviour:
   miniGames: 020000000300000004000000050000000600000007000000
   intermissionScene: 1
   victoryScene: 8
-  miniGamesToPlayCount: 5
+  miniGamesToPlayCount: 6
 --- !u!4 &1766678873
 Transform:
   m_ObjectHideFlags: 0
