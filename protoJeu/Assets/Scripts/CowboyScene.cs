@@ -18,14 +18,12 @@ public class CoBowGame : MonoBehaviour
     private Button[] targets;
     private int targetClicked;
 
-    private MainManager mainManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        mainManager = FindObjectOfType<MainManager>();
-        mainManager.instance.SetGlobalTimer(globalTimer);
+        MainManager.instance.SetGlobalTimer(globalTimer);
         timePassed = 0;
         targetClicked = 0;
         targets = FindObjectsOfType<Button>();
@@ -50,7 +48,7 @@ public class CoBowGame : MonoBehaviour
         targetClicked++;
         if (targetClicked >= targetToGet)
         {
-            mainManager.instance.MiniGameWon();
+            MainManager.instance.MiniGameWon();
         }
     }
 
@@ -63,7 +61,7 @@ public class CoBowGame : MonoBehaviour
         timeToFinishText.text = $"0{seconds}:{milliseconds}";
         if (timePassed > timeToFinish)
         {
-            mainManager.instance.MiniGameLost();
+            MainManager.instance.MiniGameLost();
         }
     }
 }

@@ -775,7 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.98742133, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1310,7 +1310,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1549690103}
         m_TargetAssemblyTypeName: HeadTails, Assembly-CSharp
-        m_MethodName: playerClicked
+        m_MethodName: PlayerClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1443,7 +1443,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1549690103}
         m_TargetAssemblyTypeName: HeadTails, Assembly-CSharp
-        m_MethodName: playerClicked
+        m_MethodName: PlayerClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

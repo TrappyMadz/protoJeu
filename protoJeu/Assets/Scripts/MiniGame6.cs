@@ -8,7 +8,6 @@ public class MiniGame6 : MonoBehaviour
 {
 
     private float timer;
-    private MainManager mainManager;
     [SerializeField] private TMP_Text globalTimer;
     [SerializeField] TMP_Text timeToFinishText;
     [SerializeField] float timeToFinish;
@@ -19,8 +18,7 @@ public class MiniGame6 : MonoBehaviour
 
     void Start()
     {
-        mainManager = FindObjectOfType<MainManager>();
-        mainManager.instance.SetGlobalTimer(globalTimer);
+        MainManager.instance.SetGlobalTimer(globalTimer);
         timer = timeToFinish;
         ButtonGreen.SetActive(false);
         ButtonRed.SetActive(false);
@@ -47,18 +45,18 @@ public class MiniGame6 : MonoBehaviour
 
     public void Red()
     {
-        mainManager.MiniGameWon();
+        MainManager.instance.MiniGameWon();
         Timer();
         
     }
 
     public void Green()
     {
-     mainManager.instance.MiniGameLost();
+     MainManager.instance.MiniGameLost();
         Timer();   
        if (timer < 0)
         {
-            mainManager.MiniGameWon();
+            MainManager.instance.MiniGameWon();
         }
 
     }
@@ -86,20 +84,20 @@ public class MiniGame6 : MonoBehaviour
     {
         if (choice == 1 && timer < 0)
         {
-            mainManager.MiniGameLost();
+            MainManager.instance.MiniGameLost();
         }
         else if (choice == 1)
         {
-            mainManager.MiniGameWon();
+            MainManager.instance.MiniGameWon();
         }
 
         if (choice == 2 && timer < 0)
         {
-            mainManager.MiniGameWon();
+            MainManager.instance.MiniGameWon();
         }
         else if (choice == 2)
         {
-            mainManager.MiniGameLost();
+            MainManager.instance.MiniGameLost();
         }
     }
 

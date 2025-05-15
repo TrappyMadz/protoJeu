@@ -1003,8 +1003,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseTimer: 30
-  miniGamesCount: 6
-  instance: {fileID: 0}
+  miniGames: 020000000300000004000000050000000600000007000000
+  intermissionScene: 1
+  victoryScene: 8
+  miniGamesToPlayCount: 5
 --- !u!4 &1766678873
 Transform:
   m_ObjectHideFlags: 0

@@ -11,8 +11,8 @@ public class MainMenuManager : MonoBehaviour
         mainManager = FindObjectOfType<MainManager>();
         if (mainManager)
         {
-            mainManager.instance.SetPlaying(false);
-            mainManager.instance.ResetMainManager();
+            MainManager.instance.SetPlaying(false);
+            MainManager.instance.ResetMainManager();
         }
     }
 
@@ -20,8 +20,8 @@ public class MainMenuManager : MonoBehaviour
     {
         if (mainManager)
         {
-            mainManager.instance.SetPlaying(true);
-            mainManager.instance.StartNextMiniGame();
+            MainManager.instance.SetPlaying(true);
+            MainManager.instance.StartNextMiniGame();
         }
     }
 

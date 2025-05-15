@@ -8,14 +8,11 @@ public class VictoryButtons : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
 
-    private MainManager mainManager;
-
     private void Start()
     {
-        mainManager = FindObjectOfType<MainManager>();
-        mainManager.instance.SetPlaying(false);
+        MainManager.instance.SetPlaying(false);
 
-        float timer = mainManager.instance.GetTrueTimer();
+        float timer = MainManager.instance.GetTrueTimer();
         string seconds = Mathf.Round(timer).ToString();
         string milliseconds = (Mathf.Round((timer - Mathf.Floor(timer)) * 1000).ToString());
         

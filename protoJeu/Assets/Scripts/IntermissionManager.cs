@@ -18,17 +18,17 @@ public class IntermissionManager : MonoBehaviour
     private void Start()
     {
         mainManager = FindObjectOfType<MainManager>();
-        mainManager.instance.SetGlobalTimer(globalTimer);
+        MainManager.instance.SetGlobalTimer(globalTimer);
         victoryPanel.SetActive(false);
         lostPanel.SetActive(false);
         firstPanel.SetActive(false);
 
-        if (mainManager.instance.GetFirstTime())
+        if (MainManager.instance.GetFirstTime())
         {
-            mainManager.instance.SetFirstTime(false);
+            MainManager.instance.SetFirstTime(false);
             StartCoroutine(WaitThenStartFirstGame(timeToWaitBetweenMiniGames));
         }
-        else if (mainManager.instance.GetWasLastGameWon())
+        else if (MainManager.instance.GetWasLastGameWon())
         {
             ShowVictoryPanel();
             StartCoroutine(WaitThenStartNextGame(timeToWaitBetweenMiniGames));
@@ -47,7 +47,7 @@ public class IntermissionManager : MonoBehaviour
 
     public void ShowLostPanel()
     {
-        mainManager.instance.SetPlaying(false);
+        MainManager.instance.SetPlaying(false);
         lostPanel.SetActive(true);
     }
     private IEnumerator WaitThenStartFirstGame(float timeToWait)
@@ -59,6 +59,6 @@ public class IntermissionManager : MonoBehaviour
     private IEnumerator WaitThenStartNextGame(float timeToWait)
     {
         yield return new WaitForSeconds(timeToWait);
-        mainManager.instance.StartNextMiniGame();
+        MainManager.instance.StartNextMiniGame();
     }
 }
