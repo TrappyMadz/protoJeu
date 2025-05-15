@@ -36,7 +36,7 @@ public class ClickMiniGame : MonoBehaviour
 
     private IEnumerator MiniGameStart()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(.7f);
         instructionText.gameObject.SetActive(false);
     }
 
