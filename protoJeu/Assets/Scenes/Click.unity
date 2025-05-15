@@ -726,7 +726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   globalTimer: {fileID: 1222974863}
   instructionText: {fileID: 2030238359}
-  nbOfClicksMax: 6
+  nbOfClicksMax: 11
   nbOfClicksMin: 0
   timeToFinish: 2.5
   timeToFinishText: {fileID: 1719671587}

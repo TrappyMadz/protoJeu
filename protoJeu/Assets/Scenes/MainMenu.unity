@@ -1493,7 +1493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseTimer: 30
-  miniGames: 02000000030000000400000005000000060000000700000008000000
+  miniGames: 03000000040000000500000006000000070000000800000002000000
   intermissionScene: 1
   victoryScene: 9
   miniGamesToPlayCount: 6
