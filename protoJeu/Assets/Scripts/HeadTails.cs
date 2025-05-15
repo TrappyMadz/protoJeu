@@ -31,7 +31,7 @@ public class HeadTails : MonoBehaviour
 
     private IEnumerator MiniGameStart()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         instructionText.gameObject.SetActive(false);
         int rnd = Random.Range(1, 3);
 
@@ -44,6 +44,14 @@ public class HeadTails : MonoBehaviour
             TeleportAnim(right.GetComponent<RectTransform>().anchoredPosition, watchout);
         }
         
+        watchout.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        watchout.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        watchout.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        watchout.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
         watchout.SetActive(false);
         yield return new WaitForSeconds(0.1f);
         watchout.SetActive(true);

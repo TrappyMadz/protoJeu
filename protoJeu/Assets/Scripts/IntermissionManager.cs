@@ -12,12 +12,9 @@ public class IntermissionManager : MonoBehaviour
     [SerializeField] private TMP_Text globalTimer;
     [SerializeField] private float timeToWaitBetweenMiniGames;
 
-    private MainManager mainManager;
-
 
     private void Start()
     {
-        mainManager = FindObjectOfType<MainManager>();
         MainManager.instance.SetGlobalTimer(globalTimer);
         victoryPanel.SetActive(false);
         lostPanel.SetActive(false);
@@ -54,11 +51,16 @@ public class IntermissionManager : MonoBehaviour
     {
         firstPanel.SetActive(true);
         yield return new WaitForSeconds(timeToWait);
-        SceneManager.LoadScene(2);
+        MainManager.instance.StartNextMiniGame();
     }
     private IEnumerator WaitThenStartNextGame(float timeToWait)
     {
         yield return new WaitForSeconds(timeToWait);
         MainManager.instance.StartNextMiniGame();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }
