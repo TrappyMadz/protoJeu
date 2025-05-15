@@ -61,4 +61,9 @@ public class IntermissionManager : MonoBehaviour
         yield return new WaitForSeconds(timeToWait);
         MainManager.instance.StartNextMiniGame();
     }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
