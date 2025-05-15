@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoBowGame : MonoBehaviour
+public class CowboyScene : MonoBehaviour
 {
     [SerializeField] private TMP_Text globalTimer;
     [SerializeField] private TMP_Text instructionText;
@@ -15,10 +15,17 @@ public class CoBowGame : MonoBehaviour
     [SerializeField] TMP_Text timeToFinishText;
 
     private float timePassed;
-    private Button[] targets;
+    private Target[] targets;
     private int targetClicked;
 
-
+    public void TargetClickedPlus()
+    {
+        targetClicked++;
+        if (targetClicked >= targetToGet)
+        {
+            MainManager.instance.MiniGameWon();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +33,7 @@ public class CoBowGame : MonoBehaviour
         MainManager.instance.SetGlobalTimer(globalTimer);
         timePassed = 0;
         targetClicked = 0;
-        targets = FindObjectsOfType<Button>();
+        targets = FindObjectsOfType<Target>();
         for (int i = 0; i < targets.Length; i++)
         {
             RectTransform rectTransform = targets[i].GetComponent<RectTransform>();
@@ -40,16 +47,6 @@ public class CoBowGame : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         instructionText.gameObject.SetActive(false);
-    }
-
-    public void TargetClicked(GameObject target)
-    {
-        Destroy(target);
-        targetClicked++;
-        if (targetClicked >= targetToGet)
-        {
-            MainManager.instance.MiniGameWon();
-        }
     }
 
     private void Update()
