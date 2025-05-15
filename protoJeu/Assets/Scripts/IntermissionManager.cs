@@ -12,8 +12,6 @@ public class IntermissionManager : MonoBehaviour
     [SerializeField] private TMP_Text globalTimer;
     [SerializeField] private float timeToWaitBetweenMiniGames;
 
-    private MainManager mainManager;
-
 
     private void Start()
     {
