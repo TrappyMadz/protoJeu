@@ -11,6 +11,7 @@ public class IntermissionManager : MonoBehaviour
     [SerializeField] private GameObject firstPanel;
     [SerializeField] private TMP_Text globalTimer;
     [SerializeField] private float timeToWaitBetweenMiniGames;
+    [SerializeField] private TMP_Text MiniGameTimer;
 
 
     private void Start()
@@ -39,8 +40,10 @@ public class IntermissionManager : MonoBehaviour
 
     public void ShowVictoryPanel()
     {
+        MainManager.instance.SetGlobalTimer(MiniGameTimer);
         victoryPanel.SetActive(true);
     }
+
 
     public void ShowLostPanel()
     {
