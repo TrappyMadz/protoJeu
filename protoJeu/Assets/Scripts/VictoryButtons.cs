@@ -17,7 +17,7 @@ public class VictoryButtons : MonoBehaviour
         string milliseconds = (Mathf.Round((timer - Mathf.Floor(timer)) * 1000).ToString());
         
 
-        scoreText.text = $"Temps restant : {seconds}:{milliseconds}";
+        scoreText.text = $"Time left : {seconds}:{milliseconds}";
     }
 
     public void Restart()
